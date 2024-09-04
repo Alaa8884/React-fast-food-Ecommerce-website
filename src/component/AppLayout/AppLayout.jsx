@@ -1,4 +1,4 @@
-import Routers from "../../routes/Routers";
+import Routes from "../../routes/Routers";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 
@@ -7,7 +7,7 @@ export default function AppLayout() {
     <div>
       <Header />
       <div>
-        <Routers />
+        <Routes />
       </div>
       <Footer />
     </div>
