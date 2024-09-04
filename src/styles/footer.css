@@ -1,0 +1,120 @@
+.footer {
+  /* position: absolute;
+  bottom: 0;
+  left: 0; */
+  padding: 50px 10px;
+  background-color: var(--secondary-color);
+}
+
+.footer-logo img {
+  width: calc(100% - 70%);
+  margin-bottom: 5px;
+}
+
+.footer-logo h5 {
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.footer-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.footer-logo p {
+  font-size: 1.2rem;
+  color: #777;
+  line-height: 1.7;
+}
+
+.list-item {
+  background: transparent !important;
+}
+
+.list-item span {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.list-item p {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.delivery-contact {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+}
+
+.delivery-contact i {
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.delivery-contact .ri-phone-line {
+  color: rgb(2, 150, 2);
+}
+.delivery-contact .ri-whatsapp-line {
+  color: rgb(6, 184, 6);
+}
+.delivery-contact .ri-mail-line {
+  color: red;
+}
+
+.newsletter p {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.newsletter-input {
+   width: 250px;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+.newsletter-input input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 1.3rem;
+}
+
+.newsletter-input input:focus {
+  outline: none;
+}
+
+.newsletter-input input::placeholder {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+}
+
+.newsletter-input button {
+  border: none;
+  outline: none;
+  padding: 5px 20px;
+  background: var(--main-color);
+  cursor: pointer;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.newsletter-input i {
+  color: #fff;
+  font-size: 1.3rem;
+}
