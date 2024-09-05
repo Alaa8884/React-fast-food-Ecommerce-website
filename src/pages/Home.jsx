@@ -1,16 +1,22 @@
 import { Col, Container, Row } from "reactstrap";
 import { Link } from "react-router-dom";
-import Helmet from "../component/Helmet/Helmet";
-import Category from "../component/Ui/Category/Category";
-import heroImage from "../assets/images/hero.png";
+import Helmet from "../component/helmet/Helmet";
+import Category from "../component/Ui/category/Category";
+import ProductCard from "../component/Ui/product-card/ProductCard";
 import "../styles/hero-section.css";
 import "../styles/home.css";
 
+import heroImage from "../assets/images/hero.png";
 import featureImg01 from "../assets/images/service-01.png";
 import featureImg02 from "../assets/images/service-02.png";
 import featureImg03 from "../assets/images/service-03.png";
+import foodCategoryImg_1 from "../assets/images/hamburger.png";
+import foodCategoryImg_2 from "../assets/images/pizza.png";
+import foodCategoryImg_3 from "../assets/images/bread.png";
+import foodsData from "../assets/data/foodData";
+import { useEffect, useState } from "react";
 
-const featureData = [
+const featureDetails = [
   {
     title: "Quick Delivery",
     imgUrl: featureImg01,
@@ -32,6 +38,30 @@ const featureData = [
 ];
 
 function Home() {
+  const [category, setCategory] = useState("All");
+  const [allFoods, setAllFoods] = useState(foodsData);
+
+  useEffect(function () {
+    if (category === "ALL") setAllFoods(foodsData);
+    if (category === "PIZZA") {
+      const filtredFoods = foodsData.filter(
+        (food) => food.category === "Pizza"
+      );
+      setAllFoods(filtredFoods);
+    }
+    if (category === "BURGER") {
+      const filtredFoods = foodsData.filter(
+        (food) => food.category === "Burger"
+      );
+      setAllFoods(filtredFoods);
+    }
+    if (category === "BREAD") {
+      const filtredFoods = foodsData.filter(
+        (food) => food.category === "Bread"
+      );
+      setAllFoods(filtredFoods);
+    }
+  }, [category]);
   return (
     <Helmet title="Home">
       <section className="px-4">
@@ -110,7 +140,7 @@ function Home() {
                 experience every time.
               </p>
             </Col>
-            {featureData.map((item, index) => (
+            {featureDetails.map((item, index) => (
               <Col lg="4" md="4" key={index} className="mt-5">
                 <div className="feature-item text-center px-5 py-3">
                   <img
@@ -121,6 +151,59 @@ function Home() {
                   <h3 className="fw-bold mb-3">{item.title}</h3>
                   <p>{item.description}</p>
                 </div>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
+      <section className="products">
+        <Container>
+          <Row>
+            <Col lg="12" className="text-center">
+              <h2>Popular Foods</h2>
+            </Col>
+            <Col lg="12">
+              <div className="foods-category d-flex align-items-center justify-content-center gap-4 p-4">
+                <button
+                  className={`all-foods ${
+                    category === "ALL" ? "foodBtnActive" : ""
+                  }`}
+                  onClick={() => setCategory("ALL")}
+                >
+                  All Foods
+                </button>
+                <button
+                  className={`humburger-btn d-flex align-items-center gap-3 ${
+                    category === "BURGER" ? "foodBtnActive" : ""
+                  }`}
+                  onClick={() => setCategory("BURGER")}
+                >
+                  <img src={foodCategoryImg_1} alt="humburger image" />
+                  <span>Burger</span>
+                </button>
+                <button
+                  className={`pizza-btn d-flex align-items-center gap-3 ${
+                    category === "PIZZA" ? "foodBtnActive" : ""
+                  }`}
+                  onClick={() => setCategory("PIZZA")}
+                >
+                  <img src={foodCategoryImg_2} alt="pizza image" />
+                  <span>Pizza</span>
+                </button>
+                <button
+                  className={`bread-btn d-flex align-items-center gap-3 ${
+                    category === "BREAD" ? "foodBtnActive" : ""
+                  }`}
+                  onClick={() => setCategory("BREAD")}
+                >
+                  <img src={foodCategoryImg_3} alt="bread image" />
+                  <span>Bread</span>
+                </button>
+              </div>
+            </Col>
+            {allFoods.map((food) => (
+              <Col lg="3" md="4" sm="6" key={food.id} className="mt-5">
+                <ProductCard food={food} />
               </Col>
             ))}
           </Row>

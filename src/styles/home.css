@@ -16,11 +16,79 @@
 }
 
 .feature-text {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   color: #777;
 }
 
 .feature-item p {
   color: #777;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
+}
+
+.products h2 {
+  font-size: 3.2rem;
+}
+
+.foods-category {
+  background: var(--main-color);
+  margin-top: 30px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.foods-category button {
+  border: none;
+  outline: none;
+  padding: 7px 15px;
+  background: transparent;
+  color: #fff;
+  font-size: 1.6rem;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+
+.foods-category button img {
+  width: 20px;
+  height: 20px;
+}
+
+.foods-category button:hover {
+  transform: scale(1.05) translateY(-3px);
+  -webkit-transform: scale(1.05) translateY(-3px);
+  -moz-transform: scale(1.05) translateY(-3px);
+  -ms-transform: scale(1.05) translateY(-3px);
+  -o-transform: scale(1.05) translateY(-3px);
+}
+
+@media only screen and (max-width:768px){
+  .foods-category button {
+  padding: 5px 10px;
+}
+}
+
+.foodBtnActive {
+  background-color: #fff !important;
+  color: var(--main-color) !important;
+  transform: scale(1.05) translateY(-3px);
+  -webkit-transform: scale(1.05) translateY(-3px);
+  -moz-transform: scale(1.05) translateY(-3px);
+  -ms-transform: scale(1.05) translateY(-3px);
+  -o-transform: scale(1.05) translateY(-3px);
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+@media only screen and (max-width:992px){
+  .foods-category button {
+    font-size: 1.4rem;
+  }
 }

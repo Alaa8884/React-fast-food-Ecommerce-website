@@ -9,7 +9,7 @@ import categoryImage04 from "../../../assets/images/category-04.png";
 
 const categoryData = [
   {
-    display: "All foods",
+    display: "Fast Foods",
     imgUrl: categoryImage01,
   },
   {

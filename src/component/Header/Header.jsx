@@ -36,7 +36,7 @@ function Header() {
   return (
     <header className="header header-sticky">
       <Container>
-        <nav className="nav-bar d-flex align-items-center justify-content-between ">
+        <div className="nav-bar d-flex align-items-center justify-content-between h-100">
           <div className="logo">
             <img src={logo} alt="resturant logo" />
             <h1>El Masrawy</h1>
@@ -75,7 +75,7 @@ function Header() {
               <i className="ri-menu-line"></i>
             </span>
           </div>
-        </nav>
+        </div>
         <div
           className="over-lay "
           onClick={handleShowMenu}
