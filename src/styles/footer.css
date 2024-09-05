@@ -1,8 +1,5 @@
 .footer {
-  /* position: absolute;
-  bottom: 0;
-  left: 0; */
-  padding: 50px 10px;
+  padding: 50px 0 30px;
   background-color: var(--secondary-color);
 }
 
@@ -73,7 +70,7 @@
 }
 
 .newsletter-input {
-   width: 250px;
+  width: 250px;
   padding: 10px;
   border: 1px solid var(--primary-color);
   display: flex;
@@ -117,4 +114,42 @@
 .newsletter-input i {
   color: #fff;
   font-size: 1.3rem;
+}
+
+.social-links p {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.social-links span i {
+  padding: 5px;
+  font-size: 1.8rem;
+  color: #fff;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.social-links span .ri-facebook-fill {
+  background: #1877f2;
+}
+
+.social-links span .ri-linkedin-fill {
+  background: #0a66c2;
+}
+
+.social-links span .ri-youtube-fill {
+  background: #ff0000;
+}
+
+.social-links span .ri-github-fill {
+  background: #333;
+}
+
+.copyright-info {
+font-size: 1.7rem;
+font-weight: 600;
+color: var(--main-color);
 }

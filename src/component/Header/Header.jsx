@@ -32,12 +32,12 @@ function Header() {
     overLay.current.classList.toggle("show-menu");
   }
   return (
-    <header className="header">
+    <header className="header header-sticky">
       <Container>
         <nav className="nav-bar d-flex align-items-center justify-content-between ">
           <div className="logo">
             <img src={logo} alt="resturant logo" />
-            <h5>El Masrawy</h5>
+            <h1>El Masrawy</h1>
           </div>
           <div className="navigation" ref={menu}>
             <div className="menu d-flex align-items-center gap-5">

@@ -4,6 +4,8 @@ import "../../styles/footer.css";
 import { Link } from "react-router-dom";
 
 function Footer() {
+   const currentYear = new Date().getFullYear();
+
   return (
     <footer className="footer">
       <Container>
@@ -69,15 +71,36 @@ function Footer() {
             </form>
           </Col>
         </Row>
-        <Row>
+        <Row className="mt-5">
           <Col lg="6" md="6">
-            <p>Copyright &copy; {new Date().getFullYear}, All Rights reserved</p>
+            <p className="copyright-info">
+              Copyright &copy; {currentYear}, All Rights reserved
+            </p>
           </Col>
-        </Row>
-        <Row>
           <Col lg="6" md="6">
-            <p>Follow:</p>
-            <span><Link ></Link></span>
+            <div className="social-links d-flex align-items-center gap-4 justify-content-end">
+              <p className="m-0">Follow:</p>
+              <span>
+                <Link to="https://facebook.com">
+                  <i className="ri-facebook-fill"></i>
+                </Link>
+              </span>
+              <span>
+                <Link to="linkedin.com/in/alaa-mohammed-youssef-9b9268220">
+                  <i className="ri-linkedin-fill"></i>
+                </Link>
+              </span>
+              <span>
+                <Link to="https://youtube.com">
+                  <i className="ri-youtube-fill"></i>
+                </Link>
+              </span>
+              <span>
+                <Link to="https://github.com/Alaa8884">
+                  <i className="ri-github-fill"></i>
+                </Link>
+              </span>
+            </div>
           </Col>
         </Row>
       </Container>

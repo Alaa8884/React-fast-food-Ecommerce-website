@@ -1,0 +1,83 @@
+.hero-content {
+  padding-top: 60px;
+}
+
+.hero-content h2 {
+  font-size: 2rem;
+}
+.hero-content h3 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  line-height: 1.5;
+}
+.hero-content h3 span {
+  color: var(--main-color);
+}
+
+.hero-content p {
+  font-size: 1.4rem;
+  color: #777;
+  line-height: 1.7;
+}
+
+.hero-btns button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 10px 25px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+.hero-btns .order-btn {
+  background-color: var(--main-color);
+  color: #fff;
+  gap: 3px;
+}
+.hero-btns .order-btn:hover {
+  background-color: #f84545;
+  color: #fff;
+}
+.hero-btns .allfoods-btn {
+  background-color: transparent;
+  border: 1px solid var(--main-color) !important;
+}
+.hero-btns .allfoods-btn:hover {
+  background-color: var(--primary-color);
+  border: 1px solid #fff !important;
+}
+
+.hero-btns .allfoods-btn a {
+  color: var(--main-color);
+}
+.hero-btns .allfoods-btn:hover a {
+  color: #fff;
+}
+
+.hero-sevices p {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.services-icon i {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.services-shipping-icon {
+  color: var(--primary-color);
+}
+
+.services-secure-icon {
+  color: var(--main-color);
+}
