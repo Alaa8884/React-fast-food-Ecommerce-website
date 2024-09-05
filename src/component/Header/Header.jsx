@@ -76,7 +76,11 @@ function Header() {
             </span>
           </div>
         </nav>
-        <div className="over-lay" onClick={handleShowMenu} ref={overLay}></div>
+        <div
+          className="over-lay "
+          onClick={handleShowMenu}
+          ref={overLay}
+        ></div>
       </Container>
     </header>
   );
