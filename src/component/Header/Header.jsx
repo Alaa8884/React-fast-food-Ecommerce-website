@@ -4,28 +4,30 @@ import logo from "../../assets/images/res-logo.png";
 import { Link, NavLink } from "react-router-dom";
 import "../../styles/header.css";
 
+const navLink = [
+  {
+    display: "Home",
+    path: "/home",
+  },
+  {
+    display: "All Foods",
+    path: "/foods",
+  },
+  {
+    display: "Cart",
+    path: "/cart",
+  },
+  {
+    display: "Contact",
+    path: "/contact",
+  },
+];
+
 function Header() {
   const menu = useRef(null);
   const overLay = useRef(null);
 
-  const navLink = [
-    {
-      display: "Home",
-      path: "/home",
-    },
-    {
-      display: "All Foods",
-      path: "/foods",
-    },
-    {
-      display: "Cart",
-      path: "/cart",
-    },
-    {
-      display: "Contact",
-      path: "/contact",
-    },
-  ];
+  
 
   function handleShowMenu() {
     menu.current.classList.toggle("show-menu");

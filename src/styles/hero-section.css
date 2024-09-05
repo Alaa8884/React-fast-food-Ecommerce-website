@@ -33,7 +33,7 @@
   -moz-border-radius: 8px;
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
-  transition: all 0.3s;
+  transition: all 0.3s !important;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
@@ -45,7 +45,7 @@
   gap: 3px;
 }
 .hero-btns .order-btn:hover {
-  background-color: #f84545;
+  background-color: var(--main-color-hover);
   color: #fff;
 }
 .hero-btns .allfoods-btn {

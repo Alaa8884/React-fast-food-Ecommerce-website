@@ -3,8 +3,11 @@
 
 :root {
   --main-color: #df2020;
+  --main-color-hover: #fb2525;
   --primary-color: #212245;
+  --primary-color-hover:#393a77;
   --secondary-color: #fde4e4;
+  --secondary-color-hover: #fbcfcf;
 }
 
 * {
@@ -38,11 +41,10 @@ a {
 
 h1,
 h2 {
-  font-size: 3.1rem;
   font-weight: 600;
   color: #212245;
 }
 
 section {
-  padding: 60px 0px;
+  padding: 50px 15px;
 }
