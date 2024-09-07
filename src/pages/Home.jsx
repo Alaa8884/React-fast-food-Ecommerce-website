@@ -1,4 +1,5 @@
-import { Col, Container, Row } from "reactstrap";
+import { useEffect, useState } from "react";
+import { Col, Container, ListGroup, ListGroupItem, Row } from "reactstrap";
 import { Link } from "react-router-dom";
 import Helmet from "../component/helmet/Helmet";
 import Category from "../component/Ui/category/Category";
@@ -13,8 +14,9 @@ import featureImg03 from "../assets/images/service-03.png";
 import foodCategoryImg_1 from "../assets/images/hamburger.png";
 import foodCategoryImg_2 from "../assets/images/pizza.png";
 import foodCategoryImg_3 from "../assets/images/bread.png";
+import whySectionImg from "../assets/images/location.png";
+
 import foodsData from "../assets/data/foodData";
-import { useEffect, useState } from "react";
 
 const featureDetails = [
   {
@@ -40,31 +42,42 @@ const featureDetails = [
 function Home() {
   const [category, setCategory] = useState("All");
   const [allFoods, setAllFoods] = useState(foodsData);
-
+  const [hotPizza, setHotPizza] = useState([])
+  
   useEffect(function () {
-    if (category === "ALL") setAllFoods(foodsData);
-    if (category === "PIZZA") {
-      const filtredFoods = foodsData.filter(
-        (food) => food.category === "Pizza"
-      );
-      setAllFoods(filtredFoods);
-    }
-    if (category === "BURGER") {
-      const filtredFoods = foodsData.filter(
-        (food) => food.category === "Burger"
-      );
-      setAllFoods(filtredFoods);
-    }
-    if (category === "BREAD") {
-      const filtredFoods = foodsData.filter(
-        (food) => food.category === "Bread"
-      );
-      setAllFoods(filtredFoods);
-    }
-  }, [category]);
+    const filteredPizza = foodsData.filter(pizzaFood => pizzaFood.category === "Pizza")
+    const hotPizzaSlice = filteredPizza.slice(0, 4)
+    setHotPizza(hotPizzaSlice)
+},[])
+
+  useEffect(
+    function () {
+      if (category === "ALL") setAllFoods(foodsData);
+      if (category === "PIZZA") {
+        const filtredFoods = foodsData.filter(
+          (food) => food.category === "Pizza"
+        );
+        setAllFoods(filtredFoods);
+      }
+      if (category === "BURGER") {
+        const filtredFoods = foodsData.filter(
+          (food) => food.category === "Burger"
+        );
+        setAllFoods(filtredFoods);
+      }
+      if (category === "BREAD") {
+        const filtredFoods = foodsData.filter(
+          (food) => food.category === "Bread"
+        );
+        setAllFoods(filtredFoods);
+      }
+    },
+    [category]
+  );
+
   return (
     <Helmet title="Home">
-      <section className="px-4">
+      <section className="px-4 pt-0">
         <Container>
           <Row>
             <Col lg="6" md="6">
@@ -122,7 +135,7 @@ function Home() {
       <section className="category pt-0">
         <Category />
       </section>
-      <section className="feature">
+      <section className="feature pt-0">
         <Container>
           <Row>
             <Col lg="12" className="text-center">
@@ -141,7 +154,7 @@ function Home() {
               </p>
             </Col>
             {featureDetails.map((item, index) => (
-              <Col lg="4" md="4" key={index} className="mt-5">
+              <Col lg="4" md="4" xs="6" key={index} className="mt-5">
                 <div className="feature-item text-center px-5 py-3">
                   <img
                     src={item.imgUrl}
@@ -156,14 +169,14 @@ function Home() {
           </Row>
         </Container>
       </section>
-      <section className="products">
+      <section className="products pt-0">
         <Container>
           <Row>
             <Col lg="12" className="text-center">
               <h2>Popular Foods</h2>
             </Col>
             <Col lg="12">
-              <div className="foods-category d-flex align-items-center justify-content-center gap-4 p-4">
+              <div className="foods-category d-flex align-items-center justify-content-center gap-3 p-4">
                 <button
                   className={`all-foods ${
                     category === "ALL" ? "foodBtnActive" : ""
@@ -202,10 +215,79 @@ function Home() {
               </div>
             </Col>
             {allFoods.map((food) => (
-              <Col lg="3" md="4" sm="6" key={food.id} className="mt-5">
+              <Col lg="4" md="4" sm="6" xs="12" key={food.id} className="mt-5">
                 <ProductCard food={food} />
               </Col>
             ))}
+          </Row>
+        </Container>
+      </section>
+      <section className="why-section pt-0">
+        <Container>
+          <Row>
+            <Col lg="6" md="6">
+              <img src={whySectionImg} alt="" className="w-100" />
+            </Col>
+            <Col lg="6" md="6">
+              <div className="why-info d-flex flex-column gap-4">
+                <h2 className="why-title">
+                  Why <span>Tasty Treat?</span>
+                </h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Dolorum, minus. Tempora reprehenderit a corporis velit,
+                  laboriosam vitae ullam, repellat illo sequi odio esse iste
+                  fugiat dolor, optio incidunt eligendi deleniti!
+                </p>
+                <ListGroup>
+                  <ListGroupItem className=" border-0 p-0 ">
+                    <p className="why-item d-flex align-items-center gap-3">
+                      <i className="ri-checkbox-circle-fill"></i>{" "}
+                      <span>Fresh and tasty foods</span>
+                    </p>
+                    <p>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Quia, voluptatibus.
+                    </p>
+                  </ListGroupItem>
+                  <ListGroupItem className=" border-0 p-0">
+                    <p className="why-item d-flex align-items-center gap-3">
+                      <i className="ri-checkbox-circle-fill"></i>{" "}
+                      <span>Quality support</span>
+                    </p>
+                    <p>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Quia, voluptatibus.
+                    </p>
+                  </ListGroupItem>
+                  <ListGroupItem className=" border-0 p-0">
+                    <p className="why-item d-flex align-items-center gap-3">
+                      <i className="ri-checkbox-circle-fill"></i>{" "}
+                      <span>Order from any location</span>
+                    </p>
+                    <p>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Quia, voluptatibus.
+                    </p>
+                  </ListGroupItem>
+                </ListGroup>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      <section className="hot-pizza pt-0">
+        <Container>
+          <Row>
+            <Col lg="12">
+              <div className="hot-pizza-title text-center mb-5">
+                <h2>Hot Pizza</h2>
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            {hotPizza.map((item, i)=>
+            <Col lg="3" md="4" sm="4" key={i}><ProductCard food={item}/></Col>)}
           </Row>
         </Container>
       </section>

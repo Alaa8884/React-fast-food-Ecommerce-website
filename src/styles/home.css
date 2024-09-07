@@ -2,7 +2,6 @@
   font-size: 2.2rem;
   font-weight: 500;
   color: var(--main-color);
-  
 }
 
 .feature-title {
@@ -12,7 +11,6 @@
 
 .feature-title span {
   color: var(--main-color);
-
 }
 
 .feature-text {
@@ -54,8 +52,8 @@
 }
 
 .foods-category button img {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 
 .foods-category button:hover {
@@ -66,10 +64,10 @@
   -o-transform: scale(1.05) translateY(-3px);
 }
 
-@media only screen and (max-width:768px){
+@media only screen and (max-width: 768px) {
   .foods-category button {
-  padding: 5px 10px;
-}
+    padding: 5px 10px;
+  }
 }
 
 .foodBtnActive {
@@ -87,8 +85,36 @@
   -o-border-radius: 8px;
 }
 
-@media only screen and (max-width:992px){
+@media only screen and (max-width: 992px) {
   .foods-category button {
     font-size: 1.4rem;
   }
+}
+
+.why-title {
+  font-size: 3.2rem;
+}
+
+.why-title span {
+  color: var(--main-color);
+}
+
+.why-info p {
+  font-size: 1.7rem;
+  line-height: 1.7;
+  color: #777;
+}
+
+.why-item {
+  color: var(--primary-color) !important;
+  font-weight: 600;
+}
+
+.why-item i {
+  color: var(--main-color) !important;
+  font-weight: 500 !important;
+}
+
+.hot-pizza-title h2 {
+  font-size: 3.2rem;
 }

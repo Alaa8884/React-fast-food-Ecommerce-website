@@ -31,12 +31,12 @@ function Category() {
     <Container>
       <Row>
         {categoryData.map((data, index) => (
-          <Col lg="3" md="4" sm="6" key={index}>
+          <Col lg="3" md="4" sm="6" xs="6" key={index}>
             <div className="category-item d-flex align-items-center justify-content-center gap-3">
               <div className="category-img">
                 <img src={data.imgUrl} alt={data.display} />
               </div>
-                <h5>{data.display}</h5>
+              <h5>{data.display}</h5>
             </div>
           </Col>
         ))}

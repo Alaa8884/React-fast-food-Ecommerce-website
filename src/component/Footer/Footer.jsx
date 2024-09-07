@@ -10,7 +10,7 @@ function Footer() {
     <footer className="footer">
       <Container>
         <Row>
-          <Col lg="3" md="4" sm="6">
+          <Col lg="3" md="4" sm="6" >
             <div className="footer-logo text-start">
               <img src={logo} alt="resturant logo" />
               <h5>El Masrawy</h5>
