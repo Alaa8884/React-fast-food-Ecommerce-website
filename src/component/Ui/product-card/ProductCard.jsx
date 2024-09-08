@@ -7,7 +7,7 @@ function ProductCard({ food }) {
   return (
     <div className="product-item h-100">
       <Link to={`/foods/${id}`} className="product-img">
-        <img src={image01} alt={`${title}-image`} className="w-50" />
+        <img src={image01} alt={`${title}-image`} className=" w-50" />
       </Link>
       <div className="product-content w-100">
         <h5>

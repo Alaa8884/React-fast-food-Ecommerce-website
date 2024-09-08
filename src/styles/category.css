@@ -1,8 +1,7 @@
 .category-item {
   cursor: pointer;
   background-color: var(--secondary-color);
-  padding: 25px 20px;
-  margin-top: 10px;
+  padding: 2.5rem 2rem;
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -22,4 +21,25 @@
   -moz-transform: translateY(-10px);
   -ms-transform: translateY(-10px);
   -o-transform: translateY(-10px);
+}
+
+
+@media only screen and (max-width: 768px) {
+  .category-item {
+    padding: 1.8rem 1rem;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+  }
+  .category-img {
+    width: 4rem;
+    height: 4rem;
+  }
 }

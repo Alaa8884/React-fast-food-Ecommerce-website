@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import Helmet from "../component/helmet/Helmet";
 import Category from "../component/Ui/category/Category";
 import ProductCard from "../component/Ui/product-card/ProductCard";
+import Slider from "../component/Ui/slider/TestiSlider";
+
 import "../styles/hero-section.css";
 import "../styles/home.css";
 
@@ -15,6 +17,7 @@ import foodCategoryImg_1 from "../assets/images/hamburger.png";
 import foodCategoryImg_2 from "../assets/images/pizza.png";
 import foodCategoryImg_3 from "../assets/images/bread.png";
 import whySectionImg from "../assets/images/location.png";
+import testmonialsImg from "../assets/images/network.png";
 
 import foodsData from "../assets/data/foodData";
 
@@ -42,13 +45,15 @@ const featureDetails = [
 function Home() {
   const [category, setCategory] = useState("All");
   const [allFoods, setAllFoods] = useState(foodsData);
-  const [hotPizza, setHotPizza] = useState([])
-  
+  const [hotPizza, setHotPizza] = useState([]);
+
   useEffect(function () {
-    const filteredPizza = foodsData.filter(pizzaFood => pizzaFood.category === "Pizza")
-    const hotPizzaSlice = filteredPizza.slice(0, 4)
-    setHotPizza(hotPizzaSlice)
-},[])
+    const filteredPizza = foodsData.filter(
+      (pizzaFood) => pizzaFood.category === "Pizza"
+    );
+    const hotPizzaSlice = filteredPizza.slice(0, 4);
+    setHotPizza(hotPizzaSlice);
+  }, []);
 
   useEffect(
     function () {
@@ -154,7 +159,7 @@ function Home() {
               </p>
             </Col>
             {featureDetails.map((item, index) => (
-              <Col lg="4" md="4" xs="6" key={index} className="mt-5">
+              <Col lg="4" md="6" sm="6" key={index} className="mt-5">
                 <div className="feature-item text-center px-5 py-3">
                   <img
                     src={item.imgUrl}
@@ -175,7 +180,7 @@ function Home() {
             <Col lg="12" className="text-center">
               <h2>Popular Foods</h2>
             </Col>
-            <Col lg="12">
+            <Col lg="12" className="">
               <div className="foods-category d-flex align-items-center justify-content-center gap-3 p-4">
                 <button
                   className={`all-foods ${
@@ -186,7 +191,7 @@ function Home() {
                   All Foods
                 </button>
                 <button
-                  className={`humburger-btn d-flex align-items-center gap-3 ${
+                  className={`humburger-btn category-btn d-flex align-items-center gap-3 ${
                     category === "BURGER" ? "foodBtnActive" : ""
                   }`}
                   onClick={() => setCategory("BURGER")}
@@ -195,7 +200,7 @@ function Home() {
                   <span>Burger</span>
                 </button>
                 <button
-                  className={`pizza-btn d-flex align-items-center gap-3 ${
+                  className={`pizza-btn category-btn d-flex align-items-center gap-3 ${
                     category === "PIZZA" ? "foodBtnActive" : ""
                   }`}
                   onClick={() => setCategory("PIZZA")}
@@ -204,7 +209,7 @@ function Home() {
                   <span>Pizza</span>
                 </button>
                 <button
-                  className={`bread-btn d-flex align-items-center gap-3 ${
+                  className={`bread-btn category-btn d-flex align-items-center gap-3 ${
                     category === "BREAD" ? "foodBtnActive" : ""
                   }`}
                   onClick={() => setCategory("BREAD")}
@@ -231,7 +236,7 @@ function Home() {
             <Col lg="6" md="6">
               <div className="why-info d-flex flex-column gap-4">
                 <h2 className="why-title">
-                  Why <span>Tasty Treat?</span>
+                  Why <span>El Masrawy Resturant?</span>
                 </h2>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -286,8 +291,38 @@ function Home() {
             </Col>
           </Row>
           <Row>
-            {hotPizza.map((item, i)=>
-            <Col lg="3" md="4" sm="4" key={i}><ProductCard food={item}/></Col>)}
+            {hotPizza.map((item, i) => (
+              <Col lg="3" md="4" sm="4" key={i}>
+                <ProductCard food={item} />
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
+      <section className="testimonial">
+        <Container>
+          <Row>
+            <Col lg="6" md="6">
+              <div className="testimonial-content">
+                <h5 className="testimonial-subtitle">Testimonial</h5>
+                <h2 className="testimonial-title">
+                  What our <span>customers</span> are saying
+                </h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Distinctio quasi qui minus quos sit perspiciatis inventore
+                  quis provident placeat fugiat!
+                </p>
+                <Slider />
+              </div>
+            </Col>
+            <Col lg="6" md="6">
+              <img
+                src={testmonialsImg}
+                alt="Testmonial Image"
+                className="w-100"
+              />
+            </Col>
           </Row>
         </Container>
       </section>

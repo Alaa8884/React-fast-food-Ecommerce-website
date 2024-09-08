@@ -1,0 +1,15 @@
+
+.userImage {
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.user-review-info h6 {
+  font-size: 1.6rem;
+}
