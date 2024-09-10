@@ -1,7 +1,9 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Container } from "reactstrap";
-import logo from "../../assets/images/res-logo.png";
 import { Link, NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+import logo from "../../assets/images/res-logo.png";
 import "../../styles/header.css";
 
 const navLink = [
@@ -24,25 +26,41 @@ const navLink = [
 ];
 
 function Header() {
-  const menu = useRef(null);
-  const overLay = useRef(null);
+  const menuEl = useRef(null);
+  const overLayEl = useRef(null);
+  const headerEl = useRef(null);
+  const totalQuantity = useSelector(state=> state.cart.totalQuantity)
 
-  
+  useEffect(function () {
+    window.addEventListener("scroll", () => {
+      if (
+        document.body.scrollTop > 80 ||
+        document.documentElement.scrollTop > 80
+      ) {
+        headerEl.current.classList.add("header-sticky");
+      } else {
+        headerEl.current.classList.remove("header-sticky");
+      }
+      return () => window.removeEventListener("scroll");
+    });
+  }, []);
 
   function handleShowMenu() {
-    menu.current.classList.toggle("show-menu");
-    overLay.current.classList.toggle("show-menu");
+    menuEl.current.classList.toggle("show-menu");
+    overLayEl.current.classList.toggle("show-menu");
   }
   return (
-    <header className="header header-sticky">
+    <header className="header header-sticky" ref={headerEl}>
       <Container>
         <div className="nav-bar d-flex align-items-center justify-content-between h-100">
           <div className="logo">
-            <img src={logo} alt="resturant logo" />
-            <h1>El Masrawy</h1>
+            <NavLink to={navLink[0].path}>
+              <img src={logo} alt="resturant logo" />
+              <h1>El Masrawy</h1>
+            </NavLink>
           </div>
-          <div className="navigation" ref={menu}>
-            <div className="menu d-flex align-items-center gap-5">
+          <div className="navigation" ref={menuEl}>
+            <div className="menu d-flex align-items-center j gap-5">
               <span className="close-btn" onClick={handleShowMenu}>
                 <i className="ri-close-circle-fill"></i>
               </span>
@@ -64,7 +82,7 @@ function Header() {
             <span className="cart-btn">
               <i className="ri-shopping-cart-2-line"></i>
               {/* <i className="ri-shopping-cart-fill"></i> */}
-              <span className="cart-count">10</span>
+              <span className="cart-count">{totalQuantity}</span>
             </span>
             <span className="user">
               <Link to="/login">
@@ -79,7 +97,7 @@ function Header() {
         <div
           className="over-lay "
           onClick={handleShowMenu}
-          ref={overLay}
+          ref={overLayEl}
         ></div>
       </Container>
     </header>

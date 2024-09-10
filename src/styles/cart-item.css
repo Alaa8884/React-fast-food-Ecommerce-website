@@ -1,0 +1,56 @@
+.cart-item{
+  margin-bottom: 15px;
+  border-bottom: 1px solid var(--secondary-color) !important;
+}
+
+.cart-item-img {
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+}
+
+.cart-food-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.cart-food-price {
+  font-size: 1.5rem;
+}
+
+.cart-food-price span{
+ color: var(--main-color);
+ font-weight: 600;
+}
+
+.cart-food-inc-dec-btns {
+  font-size: 1.6rem;
+  background: var(--secondary-color);
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.8rem;
+  -webkit-border-radius: 0.8rem;
+  -moz-border-radius: 0.8rem;
+  -ms-border-radius: 0.8rem;
+  -o-border-radius: 0.8rem;
+}
+
+.cart-food-inc-dec-btns span {
+  cursor: pointer;
+}
+
+.delete-cart-btn {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: color 0.4s;
+  -webkit-transition: color 0.4s;
+  -moz-transition: color 0.4s;
+  -ms-transition: color 0.4s;
+  -o-transition: color 0.4s;
+}
+
+.delete-cart-btn:hover{
+  color: var(--main-color);
+}

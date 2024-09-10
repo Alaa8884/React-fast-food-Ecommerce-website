@@ -1,9 +1,17 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import "../../../styles/productCard.css";
+import { increaseItemQuantity } from "../../../store/shopping-cart/cartSlice";
 
 function ProductCard({ food }) {
+  const dispatch = useDispatch()
   const { id, title, price, image01 } = food;
+
+  function handleAddToCart() {
+    const newItem ={id,title, price, image01}
+    dispatch(increaseItemQuantity(newItem))
+  }
   return (
     <div className="product-item h-100">
       <Link to={`/foods/${id}`} className="product-img">
@@ -16,7 +24,9 @@ function ProductCard({ food }) {
       </div>
       <div className=" d-flex align-items-center justify-content-between gap-2">
         <span className="product-price">{price} EGP</span>
-        <button className="addToCart">Add to Cart</button>
+        <button className="addToCart" onClick={handleAddToCart}>
+          Add to Cart
+        </button>
       </div>
     </div>
   );
