@@ -2,16 +2,22 @@
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import "../../../styles/productCard.css";
-import { increaseItemQuantity } from "../../../store/shopping-cart/cartSlice";
+import { addItemToCart } from "../../../store/shopping-cart/cartSlice";
 
 function ProductCard({ food }) {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const { id, title, price, image01 } = food;
-
   function handleAddToCart() {
-    const newItem ={id,title, price, image01}
-    dispatch(increaseItemQuantity(newItem))
+    const newItem = {
+      id,
+      title,
+      price,
+      image01,
+      quantity:1
+    };
+    dispatch(addItemToCart(newItem));
   }
+
   return (
     <div className="product-item h-100">
       <Link to={`/foods/${id}`} className="product-img">

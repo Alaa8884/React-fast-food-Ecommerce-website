@@ -1,10 +1,11 @@
 import { useEffect, useRef } from "react";
 import { Container } from "reactstrap";
 import { Link, NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import logo from "../../assets/images/res-logo.png";
 import "../../styles/header.css";
+import { toggleCart } from "../../store/shopping-cart/cartUiSlice";
 
 const navLink = [
   {
@@ -29,7 +30,9 @@ function Header() {
   const menuEl = useRef(null);
   const overLayEl = useRef(null);
   const headerEl = useRef(null);
-  const totalQuantity = useSelector(state=> state.cart.totalQuantity)
+  const totalQuantity = useSelector(state => state.cart.totalQuantity);
+  
+  const dispatch =  useDispatch()
 
   useEffect(function () {
     window.addEventListener("scroll", () => {
@@ -48,6 +51,10 @@ function Header() {
   function handleShowMenu() {
     menuEl.current.classList.toggle("show-menu");
     overLayEl.current.classList.toggle("show-menu");
+  }
+
+  function handleToggleCart() {
+    dispatch(toggleCart());
   }
   return (
     <header className="header header-sticky" ref={headerEl}>
@@ -79,7 +86,7 @@ function Header() {
             </div>
           </div>{" "}
           <div className="nav-side d-flex align-items-center gap-4">
-            <span className="cart-btn">
+            <span className="cart-btn" onClick={handleToggleCart}>
               <i className="ri-shopping-cart-2-line"></i>
               {/* <i className="ri-shopping-cart-fill"></i> */}
               <span className="cart-count">{totalQuantity}</span>
