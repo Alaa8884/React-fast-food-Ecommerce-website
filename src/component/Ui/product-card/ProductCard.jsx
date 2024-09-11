@@ -13,7 +13,7 @@ function ProductCard({ food }) {
       title,
       price,
       image01,
-      quantity:1
+      quantity:1,
     };
     dispatch(addItemToCart(newItem));
   }

@@ -220,7 +220,7 @@ function Home() {
               </div>
             </Col>
             {allFoods.map((food) => (
-              <Col lg="4" md="4" sm="6" xs="12" key={food.id} className="mt-5">
+              <Col lg="4" md="4" sm="6" xs="6" key={food.id} className="mt-5">
                 <ProductCard food={food} />
               </Col>
             ))}
@@ -292,7 +292,7 @@ function Home() {
           </Row>
           <Row>
             {hotPizza.map((item, i) => (
-              <Col lg="3" md="4" sm="4" key={i}>
+              <Col lg="3" md="4" sm="4" xs="6" key={i} className="mb-4">
                 <ProductCard food={item} />
               </Col>
             ))}
