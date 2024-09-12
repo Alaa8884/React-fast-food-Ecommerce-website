@@ -31,5 +31,18 @@
   font-size: 3.2rem;
   font-weight: 600;
   color: var(--main-color);
+}
 
+@media only screen and (max-width: 768px) {
+  .search-box,
+  .sorting-box select {
+    width: 100%;
+    padding: 0.6rem 1.2rem;
+    font-size: 1.4rem;
+  }
+  
+  .not-found-msg {
+    font-size: 1.8rem;
+    
+  }
 }
