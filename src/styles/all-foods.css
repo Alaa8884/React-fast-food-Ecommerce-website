@@ -26,3 +26,10 @@
   background-color: var(--main-color);
   color: #fff;
 }
+
+.not-found-msg {
+  font-size: 3.2rem;
+  font-weight: 600;
+  color: var(--main-color);
+
+}
