@@ -10,6 +10,7 @@ const usersReviewData = [
     userImage: userImg01,
     userReview:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore ullam quibusdam adipisci aut. Sit quidem illo cupiditate optio fugiat asperiores!",
+      userEmail: "user@test.com"
   },
   {
     id: "07",
@@ -17,6 +18,7 @@ const usersReviewData = [
     userImage: userImg02,
     userReview:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore ullam quibusdam adipisci aut. Sit quidem illo cupiditate optio fugiat asperiores!",
+      userEmail: "user@test.com"
   },
   {
     id: "08",
@@ -24,6 +26,7 @@ const usersReviewData = [
     userImage: userImg03,
     userReview:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore ullam quibusdam adipisci aut. Sit quidem illo cupiditate optio fugiat asperiores!",
+      userEmail: "user@test.com"
   },
   {
     id: "09",
@@ -31,6 +34,7 @@ const usersReviewData = [
     userImage: userImg04,
     userReview:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore ullam quibusdam adipisci aut. Sit quidem illo cupiditate optio fugiat asperiores!",
+      userEmail: "user@test.com"
   },
 ];
 

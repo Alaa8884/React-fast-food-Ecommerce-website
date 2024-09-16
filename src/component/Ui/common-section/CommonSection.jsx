@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Container } from "reactstrap";
-import "../../../styles/common-section.css"
+import "../../../styles/common-section.css";
+
 function CommonSection(props) {
   return (
     <section className="common-section">

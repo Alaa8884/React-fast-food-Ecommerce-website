@@ -19,7 +19,7 @@ import foodCategoryImg_3 from "../assets/images/bread.png";
 import whySectionImg from "../assets/images/location.png";
 import testmonialsImg from "../assets/images/network.png";
 
-import foodsData from "../assets/data/foodData";
+import foodsData from "../assets/data/foodsData";
 
 const featureDetails = [
   {

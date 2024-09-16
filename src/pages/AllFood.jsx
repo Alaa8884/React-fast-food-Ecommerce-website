@@ -4,7 +4,7 @@ import debounce from "lodash.debounce";
 import { Col, Container, Row } from "reactstrap";
 import Helmet from "../component/helmet/Helmet";
 import CommonSection from "../component/Ui/common-section/CommonSection";
-import allFoodsData from "../assets/data/foodData";
+import allFoodsData from "../assets/data/foodsData";
 import ProductCard from "../component/Ui/product-card/ProductCard";
 import "../styles/all-foods.css";
 import "../styles/paginate-page.css";
@@ -14,9 +14,9 @@ function AllFood() {
 
   const [pageNumber, setPageNumber] = useState(0);
 
-function handleChange(e) {
-  setSearchItem(e.target.value);
-}
+  function handleChange(e) {
+    setSearchItem(e.target.value);
+  }
 
   const debouncedResults = useMemo(() => {
     return debounce(handleChange, 700);
@@ -28,13 +28,13 @@ function handleChange(e) {
       debouncedResults.cancel();
     };
   }, [debouncedResults, searchItem]);
-  
 
   const searchedFood = allFoodsData.filter((food) => {
     if (searchItem === "") return food;
     if (food.title.toLowerCase().includes(searchItem.toLowerCase()))
       return food;
   });
+  
   const productPerPage = 10;
   const visitedPage = pageNumber * productPerPage;
   const displayPage = searchedFood.slice(
@@ -45,8 +45,9 @@ function handleChange(e) {
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
-  
-  const displayPageLenght = displayPage.length > 0
+
+  const displayPageLenght = displayPage.length > 0;
+
   return (
     <Helmet title="All Foods">
       <CommonSection title="All Foods" />

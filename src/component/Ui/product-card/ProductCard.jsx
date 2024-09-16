@@ -7,6 +7,7 @@ import { addItemToCart } from "../../../store/shopping-cart/cartSlice";
 function ProductCard({ food }) {
   const dispatch = useDispatch();
   const { id, title, price, image01 } = food;
+  
   function handleAddToCart() {
     const newItem = {
       id,
