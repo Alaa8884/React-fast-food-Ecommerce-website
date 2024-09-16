@@ -60,7 +60,7 @@
   color: var(--main-color);
 }
 
-@media only screen and (max-width:425px) {
+@media only screen and (max-width:576px) {
 .cart-food-price {
   font-size: 1.2rem;
   gap: 8px !important;
@@ -71,6 +71,6 @@
 }
 
 .delete-cart-btn {
-  font-size: 1.4rem;
+  font-size: 2rem;
 }
 }

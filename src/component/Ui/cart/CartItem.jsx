@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { ListGroupItem } from "reactstrap";
-// import cartImage from "../../../assets/images/food_05.1.jpg";
 import "../../../styles/cart-item.css";
 import { useDispatch } from "react-redux";
 import {
