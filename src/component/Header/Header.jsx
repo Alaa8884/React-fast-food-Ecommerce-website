@@ -88,7 +88,6 @@ function Header() {
           <div className="nav-side d-flex align-items-center gap-4">
             <span className="cart-btn" onClick={handleToggleCart}>
               <i className="ri-shopping-cart-2-line"></i>
-              {/* <i className="ri-shopping-cart-fill"></i> */}
               <span className="cart-count">{totalQuantity}</span>
             </span>
             <span className="user">

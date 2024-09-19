@@ -23,7 +23,7 @@ const totalAmount = useSelector(state=> state.cart.totalAmount);
           <h2 className="text-center">Your Cart</h2>
           <div className="cart-item-list">
             {userCart.length === 0 ? (
-              <h3 className=" text-center mt-5 display-5">
+              <h3 className=" text-center mt-5 display-6">
                 Your cart is empty
               </h3>
             ) : (
