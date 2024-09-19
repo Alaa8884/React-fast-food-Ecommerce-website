@@ -8,7 +8,7 @@ import "../../../styles/shopping-cart.css"
 
 function Carts() {
   const dispatch = useDispatch()
-const cartProducts = useSelector(state=> state.cart.cart)
+const userCart = useSelector(state=> state.cart.cart)
 const totalAmount = useSelector(state=> state.cart.totalAmount);
   function handleCloseCart() {
     dispatch(toggleCart())
@@ -22,12 +22,12 @@ const totalAmount = useSelector(state=> state.cart.totalAmount);
           </div>
           <h2 className="text-center">Your Cart</h2>
           <div className="cart-item-list">
-            {cartProducts.length === 0 ? (
+            {userCart.length === 0 ? (
               <h3 className=" text-center mt-5 display-5">
                 Your cart is empty
               </h3>
             ) : (
-              cartProducts.map((product) => (
+              userCart.map((product) => (
                 <CartItem key={product.id} product={product} />
               ))
             )}
@@ -35,7 +35,7 @@ const totalAmount = useSelector(state=> state.cart.totalAmount);
           <div className="cart-footer d-flex align-items-center justify-content-between gap-2">
             <h6 className="total-amount-title">
               Total amount :{" "}
-              <span className="total-amount">{totalAmount} Egp</span>
+              <span className="total-amount">{totalAmount} EGP</span>
             </h6>
             <button className="cart-checkout-btn">
               <Link to="/checkout">Checkout</Link>

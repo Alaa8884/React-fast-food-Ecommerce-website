@@ -6,9 +6,9 @@ import CommonSection from "../component/Ui/common-section/CommonSection";
 import ProductCard from "../component/Ui/product-card/ProductCard";
 import allFoodsData from "../assets/data/foodsData";
 import usersReviewData from "../assets/data/usersReviewData";
-import "../styles/food-details.css";
 import { useDispatch } from "react-redux";
 import { addItemToCart } from "../store/shopping-cart/cartSlice";
+import "../styles/food-details.css";
 
 function FoodDetails() {
   const [tabContent, setTabContent] = useState("description");
@@ -30,15 +30,18 @@ function FoodDetails() {
   const [reviewUserEmail, setReviewUserEmail] = useState("");
   const [reviewUserMsg, setReviewUserMsg] = useState("");
 
+
   function handleSubmit(e) {
     e.preventDefault();
-    const usersReview = {};
-    usersReview.id = `0${Number(usersReviewData.at(-1).id) + 1}`;
-    usersReview.userName = reviewUserName;
-    usersReview.userEmail = reviewUserEmail;
-    usersReview.userReview = reviewUserMsg;
-    usersReview.userImage = null;
-    // usersReviewData.push(usersReview);
+    const usersReview = {
+      id: `0${Number(usersReviewData.at(-1).id) + 1}`,
+      userName: reviewUserName,
+      userEmail: reviewUserEmail,
+      userReview: reviewUserMsg,
+      userImage: null,
+    };
+
+    console.log(usersReview)
   }
 
   function handleAddToCart() {
@@ -83,7 +86,7 @@ function FoodDetails() {
               <div className="food-info">
                 <h2 className="food-title">{title}</h2>
                 <p className="food-price">
-                  Price: <span>{price} Egp</span>
+                  Price: <span>{price} EGP</span>
                 </p>
                 <p className="food-category mb-5">
                   Category: <span>{category}</span>
@@ -135,7 +138,7 @@ function FoodDetails() {
                           type="text"
                           placeholder="Enter your name"
                           onChange={(e) => setReviewUserName(e.target.value)}
-                          required
+                          required 
                         />
                       </div>
                       <div className="form-input">

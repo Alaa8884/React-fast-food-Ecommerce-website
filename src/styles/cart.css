@@ -1,0 +1,101 @@
+table {
+  text-align: center;
+  width: 100%;
+  border: 2px solid var(--secondary-color) !important;
+}
+
+table th {
+  font-size: 1.8rem;
+  border-bottom: 3px solid var(--main-color) !important;
+}
+
+table td {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.user-cart-image-box {
+  width: 80px;
+}
+
+.user-cart-food-image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+table td i {
+  cursor: pointer;
+  transform: all 0.4s;
+  -webkit-transform: all 0.4s;
+  -moz-transform: all 0.4s;
+  -ms-transform: all 0.4s;
+  -o-transform: all 0.4s;
+}
+
+table td i:hover {
+  color: red;
+}
+
+.totalamount {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.totalamount span {
+  color: var(--main-color);
+}
+
+.subtotal p {
+  font-size: 1.6rem;
+}
+
+.user-cart-btns button {
+  border: none;
+  outline: none;
+  padding: 0.8rem 1.9rem;
+  font-size: 1.6rem;
+  color: #fff;
+  background: var(--main-color);
+  border-radius: 0.8rem;
+  -webkit-border-radius: 0.8rem;
+  -moz-border-radius: 0.8rem;
+  -ms-border-radius: 0.8rem;
+  -o-border-radius: 0.8rem;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+}
+
+.user-cart-btns button:hover {
+  background: var(--main-color-hover);
+}
+
+@media only screen and (max-width:576px){
+
+table th {
+  font-size: 1.2rem;
+  border-bottom: 3px solid var(--main-color) !important;
+}
+
+table tr td {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.user-cart-image-box {
+  width: 30px;
+}
+
+.user-cart-btns{
+  justify-content: space-around;
+  gap: 10px;
+}
+.user-cart-btns button {
+  padding: 0.8rem 1.6rem;
+  font-size: 1.1rem;
+}
+
+}

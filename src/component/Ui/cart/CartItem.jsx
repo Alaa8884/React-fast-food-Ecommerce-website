@@ -31,7 +31,7 @@ function CartItem({ product }) {
           <div>
             <h6 className="cart-food-title">{title}</h6>
             <p className="cart-food-price d-flex align-items-center gap-3">
-              {quantity}x <span>{price} Egp</span>➡<span>{totalPrice} Egp</span>
+              {quantity}x <span>{price} EGP</span>➡<span>{totalPrice} EGP</span>
             </p>
             <div className="cart-food-inc-dec-btns d-flex align-items-center justify-content-between">
               <span className="increase-btn" onClick={handleIncreaseProduct}>
