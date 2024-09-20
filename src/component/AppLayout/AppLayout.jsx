@@ -3,7 +3,7 @@ import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 
 import "../../styles/appLayout.css"
-import Carts from "../Ui/cart/carts";
+import Carts from "../Ui/cart/Carts.jsx";
 import { useSelector } from "react-redux";
 
 
