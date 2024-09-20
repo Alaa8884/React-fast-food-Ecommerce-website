@@ -1,4 +1,5 @@
-.login-form {
+.login-form,
+.signup-form {
   background: var(--secondary-color);
   padding: 20px 15px;
   width: 40rem;
@@ -9,13 +10,15 @@
   -o-border-radius: 0.8rem;
 }
 
-@media only screen and (max-width:576px) {
-  .login-form {
+@media only screen and (max-width: 576px) {
+  .login-form,
+  .signup-form {
     width: 28rem;
   }
 }
 
-.login-form input {
+.login-form input, 
+.signup-form input {
   width: 95%;
   border: none;
   outline: none;
@@ -25,7 +28,8 @@
   font-size: 1.6rem;
 }
 
-.login-btn {
+.login-btn,
+.signup-btn {
   width: 10rem;
   padding: 0.8rem 1.6rem;
   margin-top: 1.5rem;
@@ -41,11 +45,13 @@
   -o-border-radius: 0.8rem;
 }
 
-.signup-link {
+.signup-link, 
+.login-link {
   font-size: 1.6rem;
 }
 
-.signup-link a {
+.signup-link a,
+.login-link a {
   font-weight: 600;
   transition: all 0.4s;
   -webkit-transition: all 0.4s;
@@ -54,6 +60,7 @@
   -o-transition: all 0.4s;
 }
 
-.signup-link a:hover {
+.signup-link a:hover,
+.login-link a:hover {
   color: var(--main-color);
 }

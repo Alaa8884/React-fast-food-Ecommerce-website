@@ -24,12 +24,12 @@ function Login() {
             >
               <form
                 className="login-form d-flex flex-column align-items-center gap-4"
-                onSubmit={handleSubmit}
+                onSubmit={handleSubmit} id="login"
               >
                 <input
                   type="email"
                   name="user-email"
-                  id="user-name"
+                  id="user-email"
                   placeholder="Enter your email"
                   required
                   ref={loginEmailRef}
