@@ -1,10 +1,11 @@
+import { useSelector } from "react-redux";
+
 import Routes from "../../routes/Routers.jsx";
-import Footer from "../Footer/Footer.jsx";
-import Header from "../Header/Header.jsx";
+import Footer from "../footer/Footer.jsx";
+import Header from "../header/Header.jsx";
+import Carts from "../Ui/cart/Carts.jsx";
 
 import "../../styles/appLayout.css";
-import Carts from "../Ui/cart/Carts.jsx";
-import { useSelector } from "react-redux";
 
 export default function AppLayout() {
   const showCart = useSelector((state) => state.cartUi.showCart);
