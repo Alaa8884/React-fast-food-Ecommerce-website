@@ -1,9 +1,29 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const cartFoods =
+  localStorage.getItem("cart") !== null
+    ? JSON.parse(localStorage.getItem("cart"))
+    : [];
+const totalAmount =
+  localStorage.getItem("totalAmount") !== null
+    ? JSON.parse(localStorage.getItem("totalAmount"))
+    : 0;
+const totalQuantity =
+  localStorage.getItem("totalQuantity") !== null
+    ? JSON.parse(localStorage.getItem("totalQuantity"))
+    : 0;
+
+function setLocalStorage(cart, totalAmount, totalQuantity) {
+  localStorage.setItem("cart", JSON.stringify(cart));
+  localStorage.setItem("totalAmount", JSON.stringify(totalAmount));
+  localStorage.setItem("totalQuantity", JSON.stringify(totalQuantity));
+}
+
+
 const initialState = {
-  cart: [],
-  totalQuantity: 0,
-  totalAmount: 0,
+  cart: cartFoods,
+  totalQuantity: totalQuantity,
+  totalAmount: totalAmount,
 };
 
 const cartSlice = createSlice({
@@ -32,6 +52,12 @@ const cartSlice = createSlice({
         (total, item) => total + Number(item.price) * Number(item.quantity),
         0
       );
+
+      setLocalStorage(
+        state.cart.map((food) => food),
+        state.totalAmount,
+        state.totalQuantity
+      );
     },
     deleteItem(state, action) {
       const items = state.cart.find((item) => item.id === action.payload);
@@ -40,6 +66,12 @@ const cartSlice = createSlice({
       state.totalAmount = state.cart.reduce(
         (total, item) => total + Number(item.price) * Number(item.quantity),
         0
+      );
+
+      setLocalStorage(
+        state.cart.map((food) => food),
+        state.totalAmount,
+        state.totalQuantity
       );
     },
     increaseItemQuantity(state, action) {
@@ -50,6 +82,11 @@ const cartSlice = createSlice({
       state.totalAmount = state.cart.reduce(
         (total, item) => total + Number(item.price) * Number(item.quantity),
         0
+      );
+      setLocalStorage(
+        state.cart.map((food) => food),
+        state.totalAmount,
+        state.totalQuantity
       );
     },
     decreaseItemQuantity(state, action) {
@@ -67,9 +104,21 @@ const cartSlice = createSlice({
       if (items.quantity === 0) {
         cartSlice.caseReducers.deleteItem(state, action);
       }
+      setLocalStorage(
+        state.cart.map((food) => food),
+        state.totalAmount,
+        state.totalQuantity
+      );
     },
     clearCart(state) {
       state.cart = [];
+      state.totalAmount = 0;
+      state.totalQuantity = 0;
+      setLocalStorage(
+        state.cart.map((food) => food),
+        state.totalAmount,
+        state.totalQuantity
+      );
     },
   },
 });

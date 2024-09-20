@@ -10,7 +10,8 @@ function Cart() {
   const userCart = useSelector((state) => state.cart.cart);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
   const cartEmpty = userCart.length === 0;
-
+  console.log(userCart)
+  
   return (
     <Helmet title="You Cart">
       <CommonSection title="Your Cart" />
