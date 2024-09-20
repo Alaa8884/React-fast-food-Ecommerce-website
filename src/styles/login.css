@@ -1,0 +1,59 @@
+.login-form {
+  background: var(--secondary-color);
+  padding: 20px 15px;
+  width: 40rem;
+  border-radius: 0.8rem;
+  -webkit-border-radius: 0.8rem;
+  -moz-border-radius: 0.8rem;
+  -ms-border-radius: 0.8rem;
+  -o-border-radius: 0.8rem;
+}
+
+@media only screen and (max-width:576px) {
+  .login-form {
+    width: 28rem;
+  }
+}
+
+.login-form input {
+  width: 95%;
+  border: none;
+  outline: none;
+  background: transparent;
+  border-bottom: 1px solid var(--primary-color);
+  padding: 5px 15px;
+  font-size: 1.6rem;
+}
+
+.login-btn {
+  width: 10rem;
+  padding: 0.8rem 1.6rem;
+  margin-top: 1.5rem;
+  background: var(--main-color);
+  border: none;
+  outline: none;
+  font-size: 1.6rem;
+  color: #fff;
+  border-radius: 0.8rem;
+  -webkit-border-radius: 0.8rem;
+  -moz-border-radius: 0.8rem;
+  -ms-border-radius: 0.8rem;
+  -o-border-radius: 0.8rem;
+}
+
+.signup-link {
+  font-size: 1.6rem;
+}
+
+.signup-link a {
+  font-weight: 600;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+}
+
+.signup-link a:hover {
+  color: var(--main-color);
+}
