@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import "../../../styles/productCard.css";
 import { addItemToCart } from "../../../store/shopping-cart/cartSlice";
+import "../../../styles/productCard.css";
 
 function ProductCard({ food }) {
   const dispatch = useDispatch();
