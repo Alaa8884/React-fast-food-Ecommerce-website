@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Col, Container, ListGroup, ListGroupItem, Row } from "reactstrap";
 import { Link } from "react-router-dom";
-import Helmet from "../component/helmet/Helmet";
-import Category from "../component/Ui/category/Category";
-import ProductCard from "../component/Ui/product-card/ProductCard";
-import Slider from "../component/Ui/slider/TestiSlider";
+import Helmet from "../components/helmet/Helmet";
+import Category from "../components/Ui/category/Category";
+import ProductCard from "../components/Ui/product-card/ProductCard";
+import Slider from "../components/Ui/slider/TestiSlider";
 
 import "../styles/hero-section.css";
 import "../styles/home.css";
@@ -220,7 +220,7 @@ function Home() {
               </div>
             </Col>
             {allFoods.map((food) => (
-              <Col lg="4" md="4" sm="6" xs="6" key={food.id} className="mt-5">
+              <Col lg="3" md="4" sm="6" xs="6" key={food.id} className="mt-5">
                 <ProductCard food={food} />
               </Col>
             ))}

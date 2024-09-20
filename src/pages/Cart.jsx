@@ -1,17 +1,17 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
-import Helmet from "../component/helmet/Helmet";
-import CommonSection from "../component/Ui/common-section/CommonSection";
+import Helmet from "../components/helmet/Helmet";
+import CommonSection from "../components/Ui/common-section/CommonSection";
 import "../styles/cart.css";
-import TrTable from "../component/Ui/cart/TrTable";
+import TrTable from "../components/Ui/cart/TrTable";
 
 function Cart() {
   const userCart = useSelector((state) => state.cart.cart);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
   const cartEmpty = userCart.length === 0;
-  console.log(userCart)
-  
+  console.log(userCart);
+
   return (
     <Helmet title="You Cart">
       <CommonSection title="Your Cart" />

@@ -1,8 +1,7 @@
 import { Col, Container, ListGroup, ListGroupItem, Row } from "reactstrap";
-import Helmet from "../component/helmet/Helmet";
-import CommonSection from "../component/Ui/common-section/CommonSection";
-import "../styles/contact.css"
-
+import Helmet from "../components/helmet/Helmet";
+import CommonSection from "../components/Ui/common-section/CommonSection";
+import "../styles/contact.css";
 
 function Contact() {
   return (

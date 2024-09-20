@@ -1,36 +1,36 @@
 import { useSelector } from "react-redux";
 import { Col, Container, Row } from "reactstrap";
-import Helmet from "../component/helmet/Helmet";
-import CommonSection from "../component/Ui/common-section/CommonSection";
-import "../styles/checkout.css"
+import Helmet from "../components/helmet/Helmet";
+import CommonSection from "../components/Ui/common-section/CommonSection";
+import "../styles/checkout.css";
 import { useState } from "react";
 
 function Checkout() {
-  const [enterdName, setEnteredName] = useState("")
-  const [enterdEmail, setEnteredEmail] = useState("")
-  const [enterdPhone, setEnteredPhone] = useState("")
-  const [enterdCountry, setEnteredCountry] = useState("")
-  const [enterdCity, setEnteredCity] = useState("")
+  const [enterdName, setEnteredName] = useState("");
+  const [enterdEmail, setEnteredEmail] = useState("");
+  const [enterdPhone, setEnteredPhone] = useState("");
+  const [enterdCountry, setEnteredCountry] = useState("");
+  const [enterdCity, setEnteredCity] = useState("");
   const [enterdPostalCode, setEnteredPostalCode] = useState("");
 
-  const shippingInfo = []
+  const shippingInfo = [];
 
   const totalAmount = useSelector((state) => state.cart.totalAmount);
   const shippingAmount = 50;
-  const orderTotal = Number(totalAmount) + Number(shippingAmount)
+  const orderTotal = Number(totalAmount) + Number(shippingAmount);
 
   function handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
     const userShippingInfo = {
       name: enterdName,
-      email: enterdEmail, 
+      email: enterdEmail,
       phoneNumber: enterdPhone,
       country: enterdCountry,
       city: enterdCity,
       postalCode: enterdPostalCode,
-    }
-    shippingInfo.push(userShippingInfo)
-    console.log(shippingInfo)
+    };
+    shippingInfo.push(userShippingInfo);
+    console.log(shippingInfo);
   }
   return (
     <Helmet title="Checkout">
@@ -97,9 +97,8 @@ function Checkout() {
                   />
                 </div>
                 <button className="checkout-btn " type="submit">
-                 Payment
+                  Payment
                 </button>
-               
               </form>
             </Col>
             <Col lg="4" md="6" xs="12">

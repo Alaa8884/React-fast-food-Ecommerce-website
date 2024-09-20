@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
-import Helmet from "../component/helmet/Helmet";
-import CommonSection from "../component/Ui/common-section/CommonSection";
+import Helmet from "../components/helmet/Helmet";
+import CommonSection from "../components/Ui/common-section/CommonSection";
 import "../styles/login.css";
 
 function Register() {

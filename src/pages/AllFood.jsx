@@ -2,10 +2,10 @@ import { useEffect, useMemo, useState } from "react";
 import ReactPaginate from "react-paginate";
 import debounce from "lodash.debounce";
 import { Col, Container, Row } from "reactstrap";
-import Helmet from "../component/helmet/Helmet";
-import CommonSection from "../component/Ui/common-section/CommonSection";
+import Helmet from "../components/helmet/Helmet";
+import CommonSection from "../components/Ui/common-section/CommonSection";
 import allFoodsData from "../assets/data/foodsData";
-import ProductCard from "../component/Ui/product-card/ProductCard";
+import ProductCard from "../components/Ui/product-card/ProductCard";
 import "../styles/all-foods.css";
 import "../styles/paginate-page.css";
 
@@ -34,7 +34,7 @@ function AllFood() {
     if (food.title.toLowerCase().includes(searchItem.toLowerCase()))
       return food;
   });
-  
+
   const productPerPage = 10;
   const visitedPage = pageNumber * productPerPage;
   const displayPage = searchedFood.slice(

@@ -1,16 +1,17 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
-import Helmet from "../component/helmet/Helmet";
-import CommonSection from "../component/Ui/common-section/CommonSection";
-import "../styles/login.css"
+import Helmet from "../components/helmet/Helmet";
+import CommonSection from "../components/Ui/common-section/CommonSection";
+import "../styles/login.css";
 
 function Login() {
- const loginEmailRef = useRef()
-  const loginPasswordRef = useRef()
-  
+  const loginEmailRef = useRef();
+  const loginPasswordRef = useRef();
+
   function handleSubmit(e) {
-  e.preventDefault()}
+    e.preventDefault();
+  }
 
   return (
     <Helmet title="Login">
@@ -24,7 +25,8 @@ function Login() {
             >
               <form
                 className="login-form d-flex flex-column align-items-center gap-4"
-                onSubmit={handleSubmit} id="login"
+                onSubmit={handleSubmit}
+                id="login"
               >
                 <input
                   type="email"
@@ -39,7 +41,8 @@ function Login() {
                   name="user-password"
                   id="user-password"
                   placeholder="Enter your password"
-                  required ref={loginPasswordRef}
+                  required
+                  ref={loginPasswordRef}
                 />
                 <button type="submit" className="login-btn">
                   Login

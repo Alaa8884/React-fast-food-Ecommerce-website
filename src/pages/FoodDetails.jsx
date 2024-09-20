@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
-import Helmet from "../component/helmet/Helmet";
-import CommonSection from "../component/Ui/common-section/CommonSection";
-import ProductCard from "../component/Ui/product-card/ProductCard";
+import Helmet from "../components/helmet/Helmet";
+import CommonSection from "../components/Ui/common-section/CommonSection";
+import ProductCard from "../components/Ui/product-card/ProductCard";
 import allFoodsData from "../assets/data/foodsData";
 import usersReviewData from "../assets/data/usersReviewData";
 import { useDispatch } from "react-redux";
@@ -30,7 +30,6 @@ function FoodDetails() {
   const [reviewUserEmail, setReviewUserEmail] = useState("");
   const [reviewUserMsg, setReviewUserMsg] = useState("");
 
-
   function handleSubmit(e) {
     e.preventDefault();
     const usersReview = {
@@ -41,7 +40,7 @@ function FoodDetails() {
       userImage: null,
     };
 
-    console.log(usersReview)
+    console.log(usersReview);
   }
 
   function handleAddToCart() {
@@ -138,7 +137,7 @@ function FoodDetails() {
                           type="text"
                           placeholder="Enter your name"
                           onChange={(e) => setReviewUserName(e.target.value)}
-                          required 
+                          required
                         />
                       </div>
                       <div className="form-input">
