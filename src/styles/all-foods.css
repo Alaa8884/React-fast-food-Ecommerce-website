@@ -2,6 +2,7 @@
 .sorting-box select {
   border: 1px solid var(--secondary-color);
   padding: 0.8rem 1.6rem;
+  background: transparent;
   font-size: 1.6rem;
   cursor: pointer;
   border-radius: 2rem;
@@ -17,6 +18,8 @@
 
 .search-box input {
   border: none;
+  background: transparent;
+  flex-grow: 1;
 }
 
 .search-box input:focus {

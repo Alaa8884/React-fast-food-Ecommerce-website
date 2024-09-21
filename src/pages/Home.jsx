@@ -43,7 +43,7 @@ const featureDetails = [
 ];
 
 function Home() {
-  const [category, setCategory] = useState("All");
+  const [category, setCategory] = useState("ALL");
   const [allFoods, setAllFoods] = useState(foodsData);
   const [hotPizza, setHotPizza] = useState([]);
 
@@ -100,7 +100,7 @@ function Home() {
                 </p>
                 <div className="hero-btns d-flex align-items-center gap-5">
                   <button className="order-btn d-flex align-items-center justify-content-center">
-                    <span> Order now</span>{" "}
+                    <Link to="/contact"> Order now</Link>{" "}
                     <i className="ri-arrow-right-s-line"></i>
                   </button>
                   <button className="allfoods-btn">
