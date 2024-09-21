@@ -106,7 +106,7 @@ function Home() {
                   </button>
                 </div>
 
-                <div className="hero-sevices d-flex align-items-center gap-5 mt-5">
+                <div className="hero-sevices d-flex align-items-center gap-5 mt-5 ">
                   <p className=" d-flex align-items-center gap-3">
                     <span className="services-icon services-shipping-icon">
                       <i className="ri-car-line"></i>
