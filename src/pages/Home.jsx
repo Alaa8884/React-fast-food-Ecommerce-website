@@ -94,11 +94,9 @@ function Home() {
                 </h3>
                 <p>
                   Our food delivery service brings the best restaurants in town
-                  straight to your door. Order online and enjoy a delicious meal
-                  without ever leaving home. Fast, fresh, and convenient -
-                  that&apos;s the promise of El Masrawy
+                  straight to your door. 
                 </p>
-                <div className="hero-btns d-flex align-items-center gap-5">
+                <div className="hero-btns d-flex align-items-center gap-5 mt-5">
                   <button className="order-btn d-flex align-items-center justify-content-center">
                     <Link to="/contact"> Order now</Link>{" "}
                     <i className="ri-arrow-right-s-line"></i>
@@ -108,7 +106,7 @@ function Home() {
                   </button>
                 </div>
 
-                <div className="hero-sevices d-flex align-items-center gap-5 mt-4">
+                <div className="hero-sevices d-flex align-items-center gap-5 mt-5">
                   <p className=" d-flex align-items-center gap-3">
                     <span className="services-icon services-shipping-icon">
                       <i className="ri-car-line"></i>
@@ -153,10 +151,6 @@ function Home() {
                 Enjoy the convenience of ordering online and savor the taste of
                 freshly prepared meals without ever leaving home.
               </p>
-              <p className="feature-text">
-                Our commitment to quality and speed ensures a satisfying dining
-                experience every time.
-              </p>
             </Col>
             {featureDetails.map((item, index) => (
               <Col lg="4" md="6" sm="6" key={index} className="mt-5">
@@ -164,7 +158,7 @@ function Home() {
                   <img
                     src={item.imgUrl}
                     alt={item.title}
-                    className="w-50 mb-3"
+                    className="w-25 mb-3"
                   />
                   <h3 className="fw-bold mb-3">{item.title}</h3>
                   <p>{item.description}</p>
@@ -181,14 +175,14 @@ function Home() {
               <h2>Popular Foods</h2>
             </Col>
             <Col lg="12" className="">
-              <div className="foods-category d-flex align-items-center justify-content-center gap-3 p-4">
+              <div className="foods-category d-flex align-items-center justify-content-center gap-3 p-3 ">
                 <button
                   className={`all-foods ${
                     category === "ALL" ? "foodBtnActive" : ""
                   }`}
                   onClick={() => setCategory("ALL")}
                 >
-                  All Foods
+                  All 
                 </button>
                 <button
                   className={`humburger-btn category-btn d-flex align-items-center gap-3 ${

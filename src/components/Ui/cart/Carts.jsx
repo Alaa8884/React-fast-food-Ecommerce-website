@@ -56,7 +56,7 @@ function Carts() {
               Total amount :{" "}
               <span className="total-amount">{totalAmount} EGP</span>
             </h6>
-            <button className="cart-checkout-btn">
+            <button className="cart-checkout-btn" onClick={handleCloseCart}>
               <Link to="/checkout">Checkout</Link>
             </button>
           </div>

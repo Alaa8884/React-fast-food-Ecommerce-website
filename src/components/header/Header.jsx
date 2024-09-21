@@ -85,7 +85,7 @@ function Header() {
               ))}
             </div>
           </div>{" "}
-          <div className="nav-side d-flex align-items-center gap-4">
+          <div className="nav-side d-flex align-items-center justify-content-between gap-4">
             <span className="cart-btn" onClick={handleToggleCart}>
               <i className="ri-shopping-cart-2-line"></i>
               <span className="cart-count">{totalQuantity}</span>
