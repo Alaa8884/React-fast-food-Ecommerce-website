@@ -1,6 +1,6 @@
 .product-item {
   border: 1px solid var(--secondary-color);
-  padding: 25px;
+  padding: 20px;
   text-align: center;
   cursor: pointer;
   display: flex;

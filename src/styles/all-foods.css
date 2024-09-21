@@ -4,16 +4,17 @@
   padding: 0.8rem 1.6rem;
   font-size: 1.6rem;
   cursor: pointer;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
+  border-radius: 2rem;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
 }
 
 .sorting-box select {
   outline: none;
 }
+
 .search-box input {
   border: none;
 }
@@ -23,8 +24,8 @@
 }
 
 .sorting-box select option {
-  background-color: var(--main-color);
-  color: #fff;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 .not-found-msg {
@@ -40,9 +41,8 @@
     padding: 0.6rem 1.2rem;
     font-size: 1.4rem;
   }
-  
+
   .not-found-msg {
     font-size: 1.8rem;
-    
   }
 }

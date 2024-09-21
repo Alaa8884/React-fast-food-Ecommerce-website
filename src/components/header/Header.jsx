@@ -4,8 +4,8 @@ import { Link, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import logo from "../../assets/images/res-logo.png";
-import "../../styles/header.css";
 import { toggleCart } from "../../store/shopping-cart/cartUiSlice";
+import "../../styles/header.css";
 
 const navLink = [
   {

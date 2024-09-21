@@ -11,7 +11,7 @@ export default function AppLayout() {
   const showCart = useSelector((state) => state.cartUi.showCart);
   return (
     <div className="applayout">
-      <Header />
+      <Header/>
       {showCart && <Carts />}
       <div>
         <Routes />

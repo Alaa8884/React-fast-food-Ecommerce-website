@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import ReactPaginate from "react-paginate";
 import debounce from "lodash.debounce";
 import { Col, Container, Row } from "reactstrap";
@@ -9,11 +9,12 @@ import ProductCard from "../components/Ui/product-card/ProductCard";
 import "../styles/all-foods.css";
 import "../styles/paginate-page.css";
 
+
 function AllFood() {
   const [searchItem, setSearchItem] = useState("");
-
   const [pageNumber, setPageNumber] = useState(0);
-
+  const [sortedBy, setSortedBy] = useState("default");
+  
   function handleChange(e) {
     setSearchItem(e.target.value);
   }
@@ -48,6 +49,29 @@ function AllFood() {
 
   const displayPageLenght = displayPage.length > 0;
 
+  const sorted = useCallback(() => {
+    if (sortedBy === "default") return;
+
+    displayPage.sort((a, b) => {
+      if (sortedBy === "ascending") {
+        return a.title.localeCompare(b.title); 
+      } else if (sortedBy === "descending") {
+        return b.title.localeCompare(a.title);
+      } else if (sortedBy === "low-price") {
+        return a.price - b.price;
+      } else if (sortedBy === "high-price") {
+        return b.price - a.price;
+      } 
+    });
+  }, [sortedBy, displayPage]);
+
+  sorted()
+
+  const handleSortChange = (e) => {
+    setSortedBy(e.target.value);
+  
+  };
+
   return (
     <Helmet title="All Foods">
       <CommonSection title="All Foods" />
@@ -71,18 +95,25 @@ function AllFood() {
             </Col>
             <Col lg="6" md="6" sm="6" xs="12" className="text-end mb-4">
               <div className="sorting-box">
-                <select>
+                <select value={sortedBy} onChange={handleSortChange}>
                   <option value="default">Default</option>
                   <option value="ascending">Sort by name (A - Z)</option>
                   <option value="descending">Sort by name (Z - A)</option>
-                  <option value="high-price">Sort by price (low first)</option>
-                  <option value="low-price">Sort by price (high first)</option>
+                  <option value="low-price">Sort by price (Low first)</option>
+                  <option value="high-price">Sort by price (High first)</option>
                 </select>
               </div>
             </Col>
             {displayPageLenght ? (
               displayPage.map((food) => (
-                <Col lg="3" md="4" sm="6" xs="6" key={food.id}>
+                <Col
+                  lg="3"
+                  md="4"
+                  sm="6"
+                  xs="6"
+                  key={food.id}
+                  className="mt-5"
+                >
                   <ProductCard food={food} />
                 </Col>
               ))
