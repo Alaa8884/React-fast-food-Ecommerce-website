@@ -16,7 +16,7 @@
   top: 0;
   left: 0;
   background-color: #fff;
-  box-shadow: 0px 1px 10px 1px var(--main-color);
+  box-shadow: 0px 1px 10px 2px var(--secondary-color);
   z-index: 140;
 }
 
@@ -157,7 +157,7 @@
 .cart-btn i,
 .user i,
 .mobile-menu i {
-  font-size: 2.8rem;
+  font-size: 2rem;
   color: var(--primary-color);
   cursor: pointer;
 }
