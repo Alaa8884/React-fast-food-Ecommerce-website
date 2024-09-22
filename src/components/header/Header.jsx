@@ -57,9 +57,9 @@ function Header() {
     dispatch(toggleCart());
   }
   return (
-    <header className="header header-sticky" ref={headerEl}>
+    <header className="header" ref={headerEl}>
       <Container>
-        <div className="nav-bar d-flex align-items-center justify-content-between h-100">
+        <div className="nav-bar d-flex align-items-center justify-content-between">
           <div className="logo">
             <NavLink to={navLink[0].path}>
               <img src={logo} alt="resturant logo" />
@@ -85,7 +85,7 @@ function Header() {
               ))}
             </div>
           </div>{" "}
-          <div className="nav-side d-flex align-items-center justify-content-between gap-4">
+          <div className="nav-side d-flex align-items-center gap-4">
             <span className="cart-btn" onClick={handleToggleCart}>
               <i className="ri-shopping-cart-2-line"></i>
               <span className="cart-count">{totalQuantity}</span>
